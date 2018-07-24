@@ -1,0 +1,457 @@
+/* TYPEFACES */
+
+@font-face {
+  font-family: 'Akkurat';
+  src: url('./fonts/akkurat-light.otf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Akkurat';
+  src: url('./fonts/akkurat-regular.otf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'AkkuratMono';
+  src: url('./fonts/akkurat-mono.otf');
+}
+
+h1 {
+  font-family: 'AkkuratMono';
+  font-size: 9vw;
+  font-weight: normal;
+  line-height: 21vh;
+  width: 92vw;
+  color: green;
+}
+
+h2 {
+  font-family: 'Akkurat';
+  font-size: 3rem;
+  font-weight: 200;
+  line-height: 5rem;
+}
+
+h3 {
+  font-family: 'Akkurat';
+  font-weight: 200;
+  font-size: 1.6rem;
+  letter-spacing: 1.5px;
+  line-height: 2.3rem;
+  margin: 6rem;
+}
+
+h4 {
+  font-family: 'AkkuratMono';
+  font-size: 0.7rem;
+  line-height: 1.2rem;
+  transition: 0.2s ease-out;
+  opacity: 0;
+}
+
+h5 {
+  font-family: 'AkkuratMono';
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+h6 {
+  font-family: 'Akkurat';
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+  text-align: center;
+}
+
+.underlined {
+  border-bottom: solid 2px white;
+}
+
+.mono {
+  font-family: 'AkkuratMono';
+  color: yellow;
+}
+
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.flex {
+  width: 100vw;
+  display: flex;
+}
+
+/* LANDING PAGE */
+
+.fixedIntro {
+  width: 92vw;
+  height: 94vh;
+  position: fixed;
+  padding: 2rem 4rem;
+  z-index: -50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: pink;
+}
+
+.emojiContainer {
+  width: 27vw;
+  height: 27vw;
+  margin: 54vh 0 40vh 55vw;
+  position: fixed;
+  z-index: -50;
+}
+
+.emoji {
+  font-size: 8rem;
+  color: yellow;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+ 
+.rotating {
+  transform: rotate(180deg);
+  animation: rotating 1.5s infinite;
+}
+
+/* NEWS LABEL */
+
+.newsLabel {
+  margin: 100vh 0 50vh 0;
+  position: sticky;
+  top: 0;
+  width: calc(100vw - 6rem);
+  padding: 3rem;
+  justify-content: flex-end;
+}
+
+.label {
+  box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.25);
+  padding: 1rem;
+  animation: news 1s alternate infinite;
+  display: flex;
+  width: 8vw;
+  height: 8vw;
+  border-radius: 50%;
+  justify-content: center;
+  transform: rotate(10deg);
+  flex-direction: column;
+  margin-left: 82vw;
+}
+
+@keyframes news {
+  from {
+    background-color: orange;
+    color: cyan;
+  }
+  to {
+    background-color: #ea634b;
+    color: white;
+  }
+}
+
+/* SHORT PRESENTATION */
+
+.presentation {
+  width: calc(100vw - 16rem);
+  background-color: #232323;
+  color: white;
+  padding: 7rem 8rem;
+  z-index: -45;
+  position: sticky;
+  top: 0;
+}
+
+/* ILLUSTRATIVE VISUAL */
+
+.ambianceVisual {
+  width: 100vw;
+  height: 80vh;
+  background: center no-repeat url(/img/gaite-nomade-1.jpg);
+  background-attachment: fixed;
+}
+
+/* CURRENT ACTIVITY + GITHUB LINK */
+
+.github {
+  width: 45vw;
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 8rem 0;
+  font-family: 'AkkuratMono';
+  font-size: 2rem;
+  color: #182182;
+  transform-origin: center;
+}
+
+.githubSmiley {
+  font-size: 9rem;
+  color: yellow;
+}
+
+.github:hover > p {
+  border-bottom: solid 2px yellow;
+}
+
+.currentActivity {
+  width: 55vw;
+  color: #ededed;
+  background-color: #182182;
+  padding: 5rem 4rem 5rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PROJECTS SECTION */
+
+.projectsCanvas {
+  width: calc(100vw - 6rem);
+  height: calc(100vh - 6rem);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+}
+
+.coinTitles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@keyframes arrowMove {
+  from {
+    margin: 0 20px;
+    opacity: .5;
+  }
+  to {
+    margin: 0 0;
+    opacity: 1;
+  }
+}
+
+.arrow {
+  font-size: 2rem;
+  z-index: 35;
+  fill: black;
+  animation: arrowMove 1.5s infinite;
+}
+
+.projectsBlock {
+  height: 175vh;
+  position: sticky;
+  top: 0;
+  margin: -100vh 0 0 -25vw;
+}
+
+.projectsWrapper {
+  display: flex;
+  width: 125vw;
+  overflow-x: scroll;
+}
+
+.projectsWrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.projectPlaceholder {
+  background-image: radial-gradient(circle, #b16fca, #a356d4, #8d3ce1, #6a21ef, #0500ff);
+}
+
+.project {
+  cursor: pointer;
+  width: 30vw;
+  margin: 30vh 10vw 0 10vw; 
+  flex: 0 0 auto;
+}
+
+.project:last-child {
+  padding-right: 20vw;
+}
+
+.project div {
+  width: 30vw;
+  height: 40vh;
+  margin-bottom: 1rem;
+  transition: 0.2s ease-out;
+}
+
+.project:hover > div, .project:hover > h4 {
+  transform: translate(-50px, -50px);
+  transition: 0.2s ease-in;
+  opacity: 1;
+}
+
+.project:hover > div {
+  box-shadow: 50px 50px 50px 0 rgba(0,0,0,0.25);
+}
+
+/* SKILLS */
+
+.skills {
+  width: calc(100vw - 10rem);
+  min-height: 100vh;
+  position: sticky;
+  background-color: #8d54f7;
+  z-index: 0;
+  color: #ffcb22;
+  position: sticky;
+  top: -10px; 
+  padding: 5rem;
+}
+
+.skillsLeft {
+  width: calc((100vw - 10rem) / 2);
+  height: 100%;
+  padding-right: 4rem;
+  border-right: solid 2px #d8d58f;
+}
+
+.skillsRight {
+  width: calc((100vw - 10rem) / 2);
+  padding-left: 5rem;
+}
+
+.skillsTitle {
+  color: #d8d58f;
+  margin-bottom: 0.95rem;
+}
+
+.skillsText {
+  color: #00ff65;
+}
+
+.skillsArrow {
+  margin-right: 1rem;
+}
+
+.contact {
+  width: 90vw;
+  height: 45vh;
+  position: sticky;
+  background-color: #dbdbdb;
+  z-index: 0;
+  color: #00ff65;
+  position: sticky;
+  top: 50px; 
+  padding: 5vw;
+}
+
+/* MODALE */
+
+.modale {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  background-color: white;
+  z-index: 50;
+}
+
+.BackButton {
+  font-family: 'Akkurat';
+  position: fixed;
+  font-size: 4rem;
+  left: 4rem;
+  margin-top: 5rem;
+  z-index: 100;
+}
+
+.modaleHeader {
+  width: calc(100vw - 1.5rem);
+  position: sticky;
+  top: 0;
+  box-shadow: 0px 0px 30px 0 rgba(0,0,0,0.15);
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.modaleHeader h6 {
+  padding: 0 5rem;
+  width: 100%;
+}
+
+/*.closeHeaderButton {
+  font-family: 'Akkurat';
+  margin-top: 0.15rem;
+  font-size: 1.1rem;
+  right: 1rem;
+  z-index: 3000;
+  cursor: pointer;
+}*/
+
+.modaleIntroImage {
+  width: 100vw;
+  height: 100vh;
+}
+
+.modaleDescription {
+  width: calc(100vw - 16rem);
+  background-color: #232323;
+  color: white;
+  padding: 7rem 8rem;
+}
+
+.modaleDescription a {
+  color: white;
+  border-bottom: solid 2px white;
+}
+
+.modaleDescription span {
+  color: red;
+  border-bottom: solid 2px red;
+}
+
+.modaleContent {
+  width: 100vw;
+}
+
+.modaleContent img, .modaleContent video, .modaleContent iframe {
+  width: 100%;
+  margin-bottom: -10px;
+}
+
+.modaleContent iframe {
+  width: 100%;
+  height: 100%;
+  z-index: -30;
+  position: absolute;
+}
+
+/* FADE IN TRANSITION WHEN JUMPING TO ANOTHER PAGE */
+
+.fade-enter .homepage {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active .homepage {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
