@@ -127,7 +127,7 @@ const Homepage = (props) => {
 
 			<section className='contact'>
 				<h2 className='mono'>
-					Last experiences : WCS, Bleed
+					Last experiences : WCS, Bleed, etc...
 				</h2>
 			</section>
 
