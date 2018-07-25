@@ -126,9 +126,23 @@ const Homepage = (props) => {
 			</section>
 
 			<section className='contact'>
-				<h2 className='mono'>
-					Last experiences : WCS, Bleed, etc...
+				<h2 style={{ marginLeft: '5rem' }} className='mono'>
+					Recently : 
 				</h2>
+				<div style={{ display: 'flex', width: '100vw', marginTop: '2rem', flexDirection: 'column' }}>
+					<div style={{ width: 'calc(100vw - 20rem)', padding: '3rem 10rem', backgroundColor: '#f2f2f2', zIndex: '3', boxShadow: '0px 40px 60px 0 rgba(0,0,0,0.2)', fontFamily: 'AkkuratMono', fontSize: '1rem', lineHeight: '1.7rem',color: '#5600ad' }}>
+						2018.07.27<br/>
+						Release of the <a>Atelier Rusch</a> website and back-office, developed with React Javascript, Node.JS, MySQL, HTML5 & CSS.
+					</div>
+					<div style={{ width: 'calc(100vw - 20rem)', padding: '3rem 10rem', backgroundColor: '#f2f2f2', zIndex: '2', boxShadow: '0px 40px 60px 0 rgba(0,0,0,0.2)', fontFamily: 'AkkuratMono', fontSize: '1rem', lineHeight: '1.7rem',color: '#5600ad' }}>
+						2018.02.26 → 2018.07.27<br/>
+						5 month of intensive JavaScript & React development course at <a>Wild Code School Paris</a>.
+					</div>
+					<div style={{ width: 'calc(100vw - 20rem)', padding: '3rem 10rem', backgroundColor: '#f2f2f2', zIndex: '1', boxShadow: '0px 40px 60px 0 rgba(0,0,0,0.2)', fontFamily: 'AkkuratMono', fontSize: '1rem', lineHeight: '1.7rem',color: '#5600ad' }}>
+						2017.07.01 → 2017.11.30<br/>
+						Graphic & Webdesigner intern at <a>Bleed Vienna</a>.
+					</div>
+				</div>
 			</section>
 
 		</div>

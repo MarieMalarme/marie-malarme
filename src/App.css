@@ -317,9 +317,8 @@ a {
   width: calc(100vw - 10rem);
   min-height: 100vh;
   position: sticky;
-  background-color: #8d54f7;
+  background-color: #303030;
   z-index: 0;
-  color: #ffcb22;
   position: sticky;
   top: -10px; 
   padding: 5rem;
@@ -329,7 +328,7 @@ a {
   width: calc((100vw - 10rem) / 2);
   height: 100%;
   padding-right: 4rem;
-  border-right: solid 2px #d8d58f;
+  border-right: solid 2px white;
 }
 
 .skillsRight {
@@ -338,12 +337,12 @@ a {
 }
 
 .skillsTitle {
-  color: #d8d58f;
+  color: white;
   margin-bottom: 0.95rem;
 }
 
 .skillsText {
-  color: #00ff65;
+  color: #00f6ff;
 }
 
 .skillsArrow {
@@ -351,15 +350,14 @@ a {
 }
 
 .contact {
-  width: 90vw;
-  height: 45vh;
+  width: 100vw;
   position: sticky;
-  background-color: #dbdbdb;
+  background-color: #f2f2f2;
   z-index: 0;
   color: #00ff65;
   position: sticky;
   top: 50px; 
-  padding: 5vw;
+  padding: 5vw 0;
 }
 
 /* MODALE */
@@ -371,6 +369,16 @@ a {
   overflow: scroll;
   background-color: white;
   z-index: 50;
+  animation: .7s fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .BackButton {
@@ -443,15 +451,4 @@ a {
   height: 100%;
   z-index: -30;
   position: absolute;
-}
-
-/* FADE IN TRANSITION WHEN JUMPING TO ANOTHER PAGE */
-
-.fade-enter .homepage {
-  opacity: 0;
-}
-
-.fade-enter.fade-enter-active .homepage {
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
 }
