@@ -1,2 +1,6 @@
 RewriteEngine On
 RewriteRule .* https://mariemalarme.herokuapp.com/
+
+RewriteCond %{REQUEST_URI} !^/img/favicon\.ico$ [NC]
+RewriteCond %{HTTP_HOST} (.+)
+RewriteRule ^(.*)favicon\.(ico|gif|png|jpe?g)$ http://%1/img/favicon.ico [R=301,L,NC]
