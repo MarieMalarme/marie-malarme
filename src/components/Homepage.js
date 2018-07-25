@@ -126,7 +126,7 @@ const Homepage = (props) => {
 
 			<section className='skills flex'>
 				<div className='skillsLeft'>
-					<h2 className='skillsTitle'>I can design :</h2>
+					<h2 className='skillsTitle'>I can design</h2>
 					<br/>
 					<h2 className='skillsText'>
 						<span className='skillsArrow'>→</span>
@@ -135,7 +135,7 @@ const Homepage = (props) => {
 				</div>
 
 				<div className='skillsRight'>
-					<h2 className='skillsTitle'>I can develop :</h2>
+					<h2 className='skillsTitle'>I can develop</h2>
 					<br/>
 					<h2 className='skillsText'>
 						<span className='skillsArrow'>→</span>
@@ -154,7 +154,7 @@ const Homepage = (props) => {
 					<div className='date'>
 						2018.07.27
 					</div>
-					Release of the <a href='https://demo.atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> website and back-office, developed with React Javascript, Node.JS, MySQL, HTML5 & CSS.
+					Release of the <a href='https://demo.atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> website and back-office, developed with React Javascript, Redux, Node.JS, MySQL, HTML5 & CSS.
 				</div>
 				<div className='layer' style={{ zIndex: '3' }}>
 					<div className='date'>
@@ -181,7 +181,14 @@ const Homepage = (props) => {
 
 			<section className='contact'>
 				<h2>
-					Hello ! I'm a french Hello ! I'm a french <span className='underlined'>graphic designer</span> who loves to <span className='underlined'>explore & create</span> with technology.
+					<span>Let's do cool stuff !</span>
+					<br/>
+					<br/>
+					malarmemarie@gmail.com
+					<br/>
+					+33 6 08 76 73 32
+					<br/>
+					& I'm also on <a href='https://www.linkedin.com/in/marie-malarme/' target='_blank' rel='noopener noreferrer'>LinkedIn</a>.
 				</h2>
 			</section>
 

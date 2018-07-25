@@ -409,6 +409,7 @@ a {
   z-index: 0;
   background-color: #6900bf;
   color: white;
+  padding: 4rem 10rem;
 }
 
 .curriculum a {
@@ -432,6 +433,14 @@ a {
   z-index: 40;
   position: sticky;
   top: 50rem;
+}
+
+.contact a {
+  color: blue;
+}
+
+.contact span {
+  border-bottom: solid 1px blue;
 }
 
 /* MODALE */
