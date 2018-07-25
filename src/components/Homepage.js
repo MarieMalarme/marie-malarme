@@ -9,6 +9,25 @@ const state = {
 	projects: projects
 }
 
+// const scrollRight = () => {
+// 	document.getElementById('projectPlaceholder').animate([
+// 	// keyframes
+// 	{ marginLeft: '-25vw' }, 
+// 	{ transform: '-50vw' }
+// 	], { 
+// 	// timing options
+// 	duration: 1000,
+// 	})
+// }
+
+const scrollRight = (el, p) => {
+	el.scrollBy(p, 0)
+}
+
+const scrollLeft = (el, p) => {
+  el.scrollBy(-p, 0)
+}
+
 const Homepage = (props) => {
 
 	const projectsThumbnails = state.projects
@@ -89,19 +108,19 @@ const Homepage = (props) => {
 					<h5>Marie Malarme</h5>
 					<h5>Projects</h5>
 				</div>
-				<div className='coinTitles arrows'>
-					<ArrowBack className='arrow'/>
-					<h5>Scroll the projects</h5>
-					<ArrowNext className='arrow'/>
-				</div>
 			</section>
 
-			<section className='projectsBlock'>
-				<div className='projectsWrapper'>
+			<section id='projectsBlock' className='projectsBlock'>
+				<div id='projectsWrapper' className='projectsWrapper'>
 					<div className='project'>
-						<div className='projectPlaceholder'/>
+						<div id='projectPlaceholder' className='projectPlaceholder'/>
 					</div>
 					{projectsThumbnails}
+				</div>
+				<div className='coinTitles scrollableArrows arrows'>
+					<ArrowBack onClick={() => scrollLeft(document.getElementById('projectsWrapper'), 200)} className='arrow'/>
+					<h5>Scroll the projects</h5>
+					<ArrowNext onClick={() => scrollRight(document.getElementById('projectsWrapper'), 200)} className='arrow'/>
 				</div>
 			</section>
 
@@ -125,24 +144,45 @@ const Homepage = (props) => {
 				</div>
 			</section>
 
-			<section className='contact'>
+			<section className='recently'>
 				<h2 style={{ marginLeft: '5rem' }} className='mono'>
 					Recently : 
 				</h2>
-				<div style={{ display: 'flex', width: '100vw', marginTop: '2rem', flexDirection: 'column' }}>
-					<div style={{ width: 'calc(100vw - 20rem)', padding: '3rem 10rem', backgroundColor: '#f2f2f2', zIndex: '3', boxShadow: '0px 40px 60px 0 rgba(0,0,0,0.2)', fontFamily: 'AkkuratMono', fontSize: '1rem', lineHeight: '1.7rem',color: '#5600ad' }}>
-						2018.07.27<br/>
-						Release of the <a>Atelier Rusch</a> website and back-office, developed with React Javascript, Node.JS, MySQL, HTML5 & CSS.
+			</section>
+			<div className='flex layersContainer'>
+				<div className='layer' style={{ zIndex: '4' }}>
+					<div className='date'>
+						2018.07.27
 					</div>
-					<div style={{ width: 'calc(100vw - 20rem)', padding: '3rem 10rem', backgroundColor: '#f2f2f2', zIndex: '2', boxShadow: '0px 40px 60px 0 rgba(0,0,0,0.2)', fontFamily: 'AkkuratMono', fontSize: '1rem', lineHeight: '1.7rem',color: '#5600ad' }}>
-						2018.02.26 → 2018.07.27<br/>
-						5 month of intensive JavaScript & React development course at <a>Wild Code School Paris</a>.
-					</div>
-					<div style={{ width: 'calc(100vw - 20rem)', padding: '3rem 10rem', backgroundColor: '#f2f2f2', zIndex: '1', boxShadow: '0px 40px 60px 0 rgba(0,0,0,0.2)', fontFamily: 'AkkuratMono', fontSize: '1rem', lineHeight: '1.7rem',color: '#5600ad' }}>
-						2017.07.01 → 2017.11.30<br/>
-						Graphic & Webdesigner intern at <a>Bleed Vienna</a>.
-					</div>
+					Release of the <a href='https://demo.atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> website and back-office, developed with React Javascript, Node.JS, MySQL, HTML5 & CSS.
 				</div>
+				<div className='layer' style={{ zIndex: '3' }}>
+					<div className='date'>
+						2018.02.26 → 2018.07.27
+					</div>
+					5 month of intensive JavaScript & React development course at <a href='https://wildcodeschool.fr/' target='_blank' rel='noopener noreferrer'>Wild Code School Paris</a>.
+				</div>
+				<div className='layer' style={{ zIndex: '2' }}>
+					<div className='date'>
+						2017.07.01 → 2017.11.30
+					</div>
+					Graphic & Webdesigner intern at <a href='https://bleed.com/' target='_blank' rel='noopener noreferrer'>Bleed</a> in Vienna.
+				</div>
+				<div className='layer' style={{ zIndex: '1' }}>
+					<div className='date'>
+						2017.06.25
+					</div>
+					Graduate with Master's Degree in Multimedia & Interactive Design at <a href='https://multimedia-sorbonne.com/accueil/' target='_blank' rel='noopener noreferrer'>La Sorbonne</a> in Paris.
+				</div>
+				<div className='layer curriculum'>
+					Want to know more ? See my <a href='/img/cv-marie-malarme-03-2018-en.pdf' target='_blank' rel='noopener noreferrer'>curriculum vitae</a>.
+				</div>
+			</div>
+
+			<section className='contact'>
+				<h2>
+					Hello ! I'm a french Hello ! I'm a french <span className='underlined'>graphic designer</span> who loves to <span className='underlined'>explore & create</span> with technology.
+				</h2>
 			</section>
 
 		</div>

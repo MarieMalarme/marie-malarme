@@ -114,7 +114,7 @@ a {
 
 .emoji {
   font-size: 8rem;
-  color: yellow;
+  color: #ffda26;
 }
 
 @keyframes rotating {
@@ -244,6 +244,12 @@ a {
   align-items: center;
 }
 
+.scrollableArrows {
+  margin-left: 29vw;
+  margin-right: 4vw;
+  margin-top: 1rem;
+}
+
 @keyframes arrowMove {
   from {
     margin: 0 20px;
@@ -259,11 +265,13 @@ a {
   font-size: 2rem;
   z-index: 35;
   fill: black;
+  padding: 1rem;
+  cursor: pointer;
   animation: arrowMove 1.5s infinite;
 }
 
 .projectsBlock {
-  height: 175vh;
+  height: 150vh;
   position: sticky;
   top: 0;
   margin: -100vh 0 0 -25vw;
@@ -317,7 +325,7 @@ a {
   width: calc(100vw - 10rem);
   min-height: 100vh;
   position: sticky;
-  background-color: #303030;
+  background-color: #232323;
   z-index: 0;
   position: sticky;
   top: -10px; 
@@ -349,15 +357,81 @@ a {
   margin-right: 1rem;
 }
 
-.contact {
+/* RECENTLY */
+
+.recently {
   width: 100vw;
+  height: 8rem;
   position: sticky;
   background-color: #f2f2f2;
   z-index: 0;
-  color: #00ff65;
   position: sticky;
-  top: 50px; 
-  padding: 5vw 0;
+  top: -5px; 
+  padding-top: 5rem;
+  z-index: 5;
+}
+
+.recently h2 {
+  color: orange;
+}
+
+.layersContainer {
+  flex-direction: column;
+  background-color: #f2f2f2;
+}
+
+.layer {
+  width: calc(100vw - 20rem);
+  padding: 3rem 10rem;
+  background-color: #f2f2f2;
+  box-shadow: 0px 40px 60px 0 rgba(0,0,0,0.2);
+  font-family: 'AkkuratMono';
+  font-size: 1rem;
+  line-height: 1.7rem;
+  color: #232323;
+}
+
+.layer a {
+  color: #232323;
+  border-bottom: solid 1.25px #232323;
+}
+
+.layer a:hover {
+  color: orange;
+  border-bottom: solid 1.25px orange;
+}
+
+.date {
+  margin-bottom: 1rem;
+}
+
+.curriculum {
+  z-index: 0;
+  background-color: #6900bf;
+  color: white;
+}
+
+.curriculum a {
+  color: white;
+  border-bottom: solid 1.25px white;
+}
+
+.curriculum a:hover {
+  color: white;
+  border-bottom: solid 1.25px white;
+}
+
+/* SHORT PRESENTATION */
+
+.contact {
+  width: calc(100vw - 16rem);
+  height: calc(100vh - 14rem);
+  background-color: #232323;
+  color: white;
+  padding: 7rem 8rem;
+  z-index: 40;
+  position: sticky;
+  top: 50rem;
 }
 
 /* MODALE */
@@ -405,15 +479,6 @@ a {
   padding: 0 5rem;
   width: 100%;
 }
-
-/*.closeHeaderButton {
-  font-family: 'Akkurat';
-  margin-top: 0.15rem;
-  font-size: 1.1rem;
-  right: 1rem;
-  z-index: 3000;
-  cursor: pointer;
-}*/
 
 .modaleIntroImage {
   width: 100vw;
