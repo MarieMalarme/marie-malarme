@@ -88,7 +88,7 @@ const Homepage = (props) => {
 				</div>
 			</section>
 
-			<section className='flex'>
+			<section className='current flex'>
 				<a className='github' href='https://github.com/MarieMalarme' target='_blank' rel='noopener noreferrer'>
 					<p>Check my</p>
 					<div className='githubSmiley'>

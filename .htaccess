@@ -1,5 +1,2 @@
 RewriteEngine On
 RewriteRule .* https://mariemalarme.herokuapp.com/
-
-RewriteCond $0 !=img/favicon.ico
-RewriteRule ^([^/]+/)*favicon\.ico$ /img/favicon.ico [L]

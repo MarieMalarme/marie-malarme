@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Router } from "@reach/router"
 import Homepage from './components/Homepage.js'
 import './App.css'
+import './Responsive.css'
 
 class App extends Component {
   render() {

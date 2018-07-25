@@ -60,7 +60,7 @@ h6 {
   font-family: 'Akkurat';
   font-weight: 400;
   font-size: 0.8rem;
-  line-height: 1.2rem;
+  line-height: 1rem;
   text-align: center;
 }
 
@@ -110,6 +110,7 @@ a {
   margin: 54vh 0 40vh 55vw;
   position: fixed;
   z-index: -50;
+  background-color: transparent;
 }
 
 .emoji {
@@ -154,6 +155,11 @@ a {
   transform: rotate(10deg);
   flex-direction: column;
   margin-left: 82vw;
+}
+
+.label h6 {
+  font-size: 1vw;
+  line-height: 1.5vw;
 }
 
 @keyframes news {

@@ -1,0 +1,155 @@
+/* LARGE DESKTOP */
+
+@media all and (min-width: 1500px) {
+	
+/*	div {
+		background-color: green;
+	}*/
+}
+
+/* SMALL DESKTOP */
+
+@media all and (max-width: 1200px) {
+
+	.skills {
+		flex-direction: column;
+	}
+
+	.skillsLeft {
+		width: calc(100vw - 10rem);
+		padding-right: 5rem;
+		border-right: none;
+	}
+
+	.skillsRight {
+		width: calc(100vw - 10rem);
+		padding-right: 5rem;
+		padding-left: 0;
+		padding-top: 2.25rem;
+	}
+
+	.skillsTitle {
+		font-size: 2.5rem;
+		margin-bottom: 0;
+	}
+
+	.skillsText {
+		color: #00f6ff;
+		font-size: 2.5rem;
+		line-height: 3.75rem;
+	}
+}
+
+/* TABLET LANDSCAPE */
+
+@media all and (max-width: 980px) {
+
+	.fixedIntro {
+		width: 94vw;
+		height: 94vh;
+		padding: 3rem ;
+	}
+
+	.fixedIntro h1 {
+		width: 94vw;
+		font-size: 9vw;
+		line-height: 15vw;
+	}
+
+	.current {
+		flex-direction: column;
+	}
+
+	.github {
+		width: 100vw;
+		flex-direction: row;
+		justify-content: center;
+		padding: 4rem 0;
+	}
+
+	.githubSmiley {
+		padding: 0 2rem;
+	}
+
+	.currentActivity {
+		width: 87vw;
+		padding: 5rem 7rem 5rem 5rem;
+	}
+
+	.scrollableArrows {
+	margin-left: 39vw;
+	}
+
+	.projectsBlock {
+		margin: -100vh 0 0 -35vw;
+	}
+
+	.projectsWrapper {
+		width: 135vw;
+	}
+
+	.project {
+		width: 40vw;
+		margin: 30vh 8vw 0 8vw; 
+	}
+
+	.project div {
+		width: 40vw;
+		height: 40vh;
+		margin-bottom: 1rem;
+		transition: 0.2s ease-out;
+	}
+
+	.skillsLeft {
+		width: calc(100vw - 8rem);
+		padding-right: 4rem;
+	}
+
+	.skillsRight {
+		width: calc(100vw - 8rem);
+		padding-right: 4rem;
+	}
+}
+
+/* TABLET PORTRAIT MID */
+
+@media all and (max-width: 900px) {
+
+	.skillsTitle {
+		font-size: 2rem;
+	}
+
+	.skillsText {
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+}
+
+/* TABLET PORTRAIT */
+
+@media all and (max-width: 780px) {
+
+	.fixedIntro h1 {
+		width: 94vw;
+		font-size: 11vw;
+	}
+
+	.label {
+		display: none;
+	}
+
+	.contact h2 {
+		font-size: 2.25rem;
+		line-height: 3.5rem;
+	}
+}
+
+
+/* MOBILE */
+
+@media all and (max-width: 500px) {
+	
+/*	div {
+		background-color: yellow;
+	}*/
+}
