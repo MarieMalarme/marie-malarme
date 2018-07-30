@@ -33,7 +33,7 @@ const Modale = ({ project }) => {
 	const projectDescription = project.description
 
 	return (
-		<div>
+		<div style={{ overflow: 'scroll', height: '100%' }}>
 
 
 			<Link className='BackButton' to='/'>
