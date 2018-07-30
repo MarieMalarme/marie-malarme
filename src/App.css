@@ -197,12 +197,12 @@ a {
 /* CURRENT ACTIVITY + GITHUB LINK */
 
 .github {
-  width: 45vw;
   background-color: #e2e2e2;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex: 1 1 40vw;
   padding: 8rem 0;
   font-family: 'AkkuratMono';
   font-size: 2rem;
@@ -220,7 +220,7 @@ a {
 }
 
 .currentActivity {
-  width: 55vw;
+  flex: 1 1 55vw;
   color: #ededed;
   background-color: #182182;
   padding: 5rem 4rem 5rem 5rem;

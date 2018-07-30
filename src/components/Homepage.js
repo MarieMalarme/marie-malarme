@@ -66,7 +66,7 @@ const Homepage = (props) => {
 			</section>
 
 			<section className='newsLabel'>
-				<a href='https://demo.atelier-rusch.com' target='_blank' rel='noopener noreferrer'>
+				<a href='https://atelier-rusch.com' target='_blank' rel='noopener noreferrer'>
 					<div className='label'>
 						<h6>
 							<u>Fresh news</u>
@@ -154,7 +154,7 @@ const Homepage = (props) => {
 					<div className='date'>
 						2018.07.27
 					</div>
-					Release of the <a href='https://demo.atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> website and back-office, developed with React Javascript, Redux, Node.JS, MySQL, HTML5 & CSS.
+					Release of the <a href='https://atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> website and back-office, developed with React Javascript, Redux, Node.JS, MySQL, HTML5 & CSS.
 				</div>
 				<div className='layer' style={{ zIndex: '3' }}>
 					<div className='date'>
