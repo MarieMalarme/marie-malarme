@@ -12,9 +12,9 @@ const state = {
 // const scrollRight = () => {
 // 	document.getElementById('projectPlaceholder').animate([
 // 	// keyframes
-// 	{ marginLeft: '-25vw' }, 
+// 	{ marginLeft: '-25vw' },
 // 	{ transform: '-50vw' }
-// 	], { 
+// 	], {
 // 	// timing options
 // 	duration: 1000,
 // 	})
@@ -42,7 +42,7 @@ const Homepage = (props) => {
 
 	return (
 		<div className='homepage'>
-			
+
 			{modale}
 
 			<section className='fixedIntro'>
@@ -98,7 +98,7 @@ const Homepage = (props) => {
 				</a>
 				<div className='currentActivity'>
 					<h2>
-						I just completed an intensive 5 month <span className='mono'>JavaScript development</span> course and am currently looking for a <span className='mono'>great internship</span> to strengthen my skills.
+						I'm currently working in Madeira on an exciting <span className='mono'>pedagogic software project</span> to learn Programming to people, but I'm always interested in taking part to <span className='mono'>great projects</span> of any kind to explore further directions.
 					</h2>
 				</div>
 			</section>
@@ -146,10 +146,16 @@ const Homepage = (props) => {
 
 			<section className='recently'>
 				<h2 style={{ marginLeft: '5rem' }} className='mono'>
-					Recently : 
+					Recently :
 				</h2>
 			</section>
 			<div className='flex layersContainer'>
+				<div className='layer' style={{ zIndex: '5' }}>
+					<div className='date'>
+						2018.11.15
+					</div>
+					Started to work in Madeira as Graphic/UI/UX Designer and React Developer for a pedagogic software to learn Programming to people.
+				</div>
 				<div className='layer' style={{ zIndex: '4' }}>
 					<div className='date'>
 						2018.07.27
