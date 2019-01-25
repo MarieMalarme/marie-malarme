@@ -90,6 +90,10 @@ a {
   display: flex;
 }
 
+.mobilePage {
+  display: none;
+}
+
 /* LANDING PAGE */
 
 .fixedIntro {

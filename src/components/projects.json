@@ -1,4 +1,4 @@
-[	
+[
 	{
 		"id": "9",
 		"title": "Atelier Rusch",
@@ -6,9 +6,9 @@
 		"thumbnailImage": "/img/atelier-rusch-thumbnailImage.png",
 		"headerDescription": "Co-design studio. UX design, webdesign and React Javascript development of the site with an administrable back-office.",
 		"modaleIntroImage": "/img/atelier-rusch-modaleIntroImage.jpg",
-		"description": "<a href='https://atelier-rusch.com/' target='_blank' rel='noopener noreferrer'><span>→ Freshly released !</span></a><br/><br/><a href='https://atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> is a co-design studio proposing creative methods to co-conceive new services for cities and companies.<br/>This project, commissioned to the <a href='https://wildcodeschool.fr/' target='_blank' rel='noopener noreferrer'>Wild Code School</a> during my intensive JavaScript course, is currently in production. The beta version is already online <a href='https://atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>here</a>, and the final delivery will take place in the next weeks. <br/>As part of a team of 6 developers, I was in charge of the UX & graphic design, and took part in the front-end & back-end development with React. The website consists in a visible part displaying the activity of the studio, and a self-administrable back-office we develop from scratch.",
+		"description": "<a href='https://atelier-rusch.com/' target='_blank' rel='noopener noreferrer'><span>→ Freshly released, click here !</span></a><br/><br/><a href='https://atelier-rusch.com/' target='_blank' rel='noopener noreferrer'>Atelier Rusch</a> is a co-design studio proposing creative methods to co-conceive new services for cities and companies.<br/>This project, commissioned to the <a href='https://wildcodeschool.fr/' target='_blank' rel='noopener noreferrer'>Wild Code School</a> during my intensive JavaScript course, is constantly being enhanced with new features, as Atelier Rusch decided to hire me as their freelance developer. <br/>At the beginning of the project, as part of a team of 6 developers, I was in charge of the UX & graphic design, and took part in the front-end & back-end development with React. The website consists in a visible part displaying the activity of the studio, and a self-administrable back-office we develop from scratch.",
 		"modaleContent": [{"type": "img", "value": "/img/atelier-rusch-1.jpg"}, {"type": "video", "value": "/img/atelier-rusch-2.mp4"}]
-		
+
 	},
 	{
 		"id": "8",
@@ -39,7 +39,7 @@
 		"modaleIntroImage": "/img/opera-comique-modaleIntroImage.jpg",
 		"description": "Open Opéra is a project commissioned during my Master Degree at <a href='https://multimedia-sorbonne.com/accueil/' target='_blank' rel='noopener noreferrer'>La Sorbonne</a> by <a href='https://www.opera-comique.com/fr' target='_blank' rel='noopener noreferrer'>l'Opéra comique</a>, one of the oldest French dramatic and musical institutions in Paris.<br/> The aim of this interactive platform is to learn & share online how to sing classical patterns of the comic opera.",
 		"modaleContent": [{"type": "img", "value": "/img/opera-comique-pres-1.gif"}, {"type": "img", "value": "/img/opera-comique-pres-2.jpg"}, {"type": "img", "value": "/img/opera-comique-pres-3.gif"}, {"type": "img", "value": "/img/opera-comique-pres-4.jpg"}]
-	},	
+	},
 	{
 		"id": "5",
 		"title": "Créations & Patrimoines",
