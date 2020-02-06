@@ -113,17 +113,6 @@ canvas {
   justify-content: space-around;
 }
 
-.fixedIntro #scroll {
-  font-size: 2rem;
-  position: fixed;
-  bottom: 10%;
-  right: 5%;
-  display: none;
-  font-family: 'Akkurat';
-  font-weight: 100;
-  align-items: center;
-}
-
 section.blended-text {
   color: white;
   background-color: hsl(0, 0%, 8%);
@@ -144,6 +133,27 @@ section.blended-text {
   z-index: 0;
   background-color: transparent;
   pointer-events: none;
+}
+
+.emojiContainer #scroll {
+  font-size: 4rem;
+  transform: rotate(180deg);
+  position: fixed;
+  bottom: 8rem;
+  right: 6rem;
+}
+
+@keyframes down {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(80px);
+  }
+}
+
+.emojiContainer #scroll > div {
+  animation: down 1s alternate infinite;
 }
 
 .emoji {
