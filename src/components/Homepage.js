@@ -1,21 +1,10 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { Fragment, useRef, useEffect, useState } from 'react'
 import ArrowBack from 'react-icons/lib/io/android-arrow-back'
 import ArrowNext from 'react-icons/lib/io/android-arrow-forward'
 import Modale from './Modale.js'
 import Project from './Project.js'
 import projects from './projects.json'
 import { Link } from '@reach/router'
-
-// const scrollRight = () => {
-//  document.getElementById('projectPlaceholder').animate([
-//  // keyframes
-//  { marginLeft: '-25vw' },
-//  { transform: '-50vw' }
-//  ], {
-//  // timing options
-//  duration: 1000,
-//  })
-// }
 
 const scrollRight = (el, p) => {
   el.scrollBy(p, 0)
@@ -31,7 +20,7 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-const arrowDown = (
+const ArrowDown = ({}) => (
   <svg
     width={40}
     viewBox="0 0 130 130"
@@ -102,6 +91,7 @@ const Homepage = props => {
   const presSection = useRef(null)
   const [context, setContext] = useState(null)
   const [locked, setLocked] = useState(true)
+  const [emptyCanvas, setEmptyCanvas] = useState(true)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -110,6 +100,7 @@ const Homepage = props => {
     canvas.addEventListener('click', e => {
       canvas.style.mixBlendMode = blendModes[getRandomInt(0, 3)]
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+      setEmptyCanvas(true)
     })
 
     const types = ['scroll', 'wheel']
@@ -124,10 +115,10 @@ const Homepage = props => {
         canvas.style.pointerEvents = window.scrollY > 0 ? 'none' : 'auto'
       }),
     )
-  }, [context, presSection, locked])
+  }, [context, presSection, locked, emptyCanvas])
 
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="mobilePage">Please take a look on a wider screen !</div>
 
       <canvas
@@ -137,6 +128,7 @@ const Homepage = props => {
         onMouseMove={e => {
           context && draw(e, context)
           setLocked(false)
+          setEmptyCanvas(false)
         }}
       />
 
@@ -149,18 +141,17 @@ const Homepage = props => {
             Graphic designer
             <br />& Creative developer
           </h1>
-          <div id="scroll" style={{ display: locked ? 'none' : 'flex' }}>
-            {arrowDown}
-            {arrowDown}
-            {arrowDown}
-            {arrowDown}
-            {arrowDown}
-            {arrowDown}
-          </div>
         </section>
         <br />
+
         <section className="emojiContainer">
-          <div className="emoji rotating">&#9757;</div>
+          {emptyCanvas ? (
+            <div className="emoji rotating">&#9757;</div>
+          ) : (
+            <div id="scroll">
+              <div className="down">&#9757;&#9757;&#9757;&#9757;</div>
+            </div>
+          )}
         </section>
 
         <div style={{ display: locked ? 'none' : 'block' }}>
@@ -377,7 +368,7 @@ const Homepage = props => {
           </section>
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   )
 }
 
