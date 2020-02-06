@@ -23,7 +23,7 @@ h1 {
   font-weight: normal;
   line-height: 21vh;
   width: 92vw;
-  color: green;
+  color: hsl(0, 0%, 90%);
 }
 
 h2 {
@@ -96,8 +96,14 @@ a {
 
 /* LANDING PAGE */
 
+canvas {
+  mix-blend-mode: exclusion;
+  background-color: transparent;
+  position: fixed;
+}
+
 .fixedIntro {
-  width: 92vw;
+  width: 100vw;
   height: 94vh;
   position: fixed;
   padding: 2rem 4rem;
@@ -105,7 +111,29 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: pink;
+}
+
+.fixedIntro #scroll {
+  font-size: 2rem;
+  position: fixed;
+  bottom: -4%;
+  right: 4%;
+  display: none;
+  font-family: 'Akkurat';
+  font-weight: 100;
+  align-items: center;
+}
+
+section.blended-text {
+  color: white;
+  background-color: hsl(0, 0%, 8%);
+  font-size: 370px;
+  line-height: 310px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .emojiContainer {
@@ -113,7 +141,7 @@ a {
   height: 27vw;
   margin: 54vh 0 40vh 55vw;
   position: fixed;
-  z-index: -50;
+  z-index: 0;
   background-color: transparent;
 }
 
@@ -148,7 +176,7 @@ a {
 }
 
 .label {
-  box-shadow: 10px 10px 50px 0 rgba(0,0,0,0.25);
+  box-shadow: 10px 10px 50px 0 rgba(0, 0, 0, 0.25);
   padding: 1rem;
   animation: news 1s alternate infinite;
   display: flex;
@@ -181,24 +209,33 @@ a {
 
 .presentation {
   width: calc(100vw - 16rem);
-  background-color: #232323;
-  color: white;
+  background-color: lightgrey;
+  color: black;
   padding: 7rem 8rem;
-  z-index: -45;
   position: sticky;
   top: 0;
 }
 
 /* ILLUSTRATIVE VISUAL */
 
+.visual {
+  z-index: 5;
+  position: relative;
+}
+
 .ambianceVisual {
   width: 100vw;
   height: 80vh;
-  background: center no-repeat url(/img/gaite-nomade-1.jpg);
+  background: center / cover no-repeat url(/img/01-trame.svg), black;
   background-attachment: fixed;
 }
 
 /* CURRENT ACTIVITY + GITHUB LINK */
+
+.current {
+  z-index: 10;
+  position: relative;
+}
 
 .github {
   background-color: #e2e2e2;
@@ -210,8 +247,12 @@ a {
   padding: 8rem 0;
   font-family: 'AkkuratMono';
   font-size: 2rem;
-  color: #182182;
+  color: cornflowerblue;
   transform-origin: center;
+}
+
+.github > p {
+  border-bottom: solid 2px #e2e2e2;
 }
 
 .githubSmiley {
@@ -226,7 +267,7 @@ a {
 .currentActivity {
   flex: 1 1 65vw;
   color: #ededed;
-  background-color: #182182;
+  background-color: cornflowerblue;
   padding: 5rem 4rem 5rem 5rem;
   display: flex;
   justify-content: center;
@@ -263,7 +304,7 @@ a {
 @keyframes arrowMove {
   from {
     margin: 0 20px;
-    opacity: .5;
+    opacity: 0.5;
   }
   to {
     margin: 0 0;
@@ -298,7 +339,14 @@ a {
 }
 
 .projectPlaceholder {
-  background-image: radial-gradient(circle, #b16fca, #a356d4, #8d3ce1, #6a21ef, #0500ff);
+  background-image: radial-gradient(
+    circle,
+    #b16fca,
+    #a356d4,
+    #8d3ce1,
+    #6a21ef,
+    #0500ff
+  );
 }
 
 .project {
@@ -319,22 +367,21 @@ a {
   transition: 0.2s ease-out;
 }
 
-.project:hover > div, .project:hover > h4 {
+.project:hover > div,
+.project:hover > h4 {
   transform: translate(-50px, -50px);
   transition: 0.2s ease-in;
   opacity: 1;
 }
 
 .project:hover > div {
-  box-shadow: 50px 50px 50px 0 rgba(0,0,0,0.25);
+  box-shadow: 50px 50px 50px 0 rgba(0, 0, 0, 0.25);
 }
 
 /* SKILLS */
 
 .skills {
   width: calc(100vw - 10rem);
-  min-height: 100vh;
-  position: sticky;
   background-color: #232323;
   z-index: 0;
   position: sticky;
@@ -377,7 +424,7 @@ a {
   position: sticky;
   top: -5px;
   padding-top: 5rem;
-  z-index: 6;
+  z-index: 20;
 }
 
 .recently h2 {
@@ -393,7 +440,7 @@ a {
   width: calc(100vw - 20rem);
   padding: 3rem 10rem;
   background-color: #f2f2f2;
-  box-shadow: 0px 40px 60px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 40px 60px 0 rgba(0, 0, 0, 0.2);
   font-family: 'AkkuratMono';
   font-size: 1rem;
   line-height: 1.7rem;
@@ -415,7 +462,7 @@ a {
 }
 
 .curriculum {
-  z-index: 0;
+  z-index: 25;
   background-color: #6900bf;
   color: white;
   padding: 4rem 10rem;
@@ -461,7 +508,7 @@ a {
   overflow: scroll;
   background-color: white;
   z-index: 50;
-  animation: .7s fadeIn;
+  animation: 0.7s fadeIn;
 }
 
 @keyframes fadeIn {
@@ -486,7 +533,7 @@ a {
   width: calc(100vw - 1.5rem);
   position: sticky;
   top: 0;
-  box-shadow: 0px 0px 30px 0 rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 30px 0 rgba(0, 0, 0, 0.15);
   background-color: rgba(255, 255, 255, 0.25);
   padding: 0.75rem;
   justify-content: center;
@@ -524,7 +571,9 @@ a {
   width: 100vw;
 }
 
-.modaleContent img, .modaleContent video, .modaleContent iframe {
+.modaleContent img,
+.modaleContent video,
+.modaleContent iframe {
   width: 100%;
   margin-bottom: -10px;
 }
