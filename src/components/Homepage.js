@@ -25,6 +25,64 @@ const scrollLeft = (el, p) => {
   el.scrollBy(-p, 0)
 }
 
+const getRandomInt = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
+const arrowDown = (
+  <svg
+    width={40}
+    viewBox="0 0 130 130"
+    fill="none"
+    stroke="white"
+    strokeWidth={5}
+  >
+    <path d="M114.65 73.1L67 120.75 19.35 73.1M67 5.75v114.34" />
+  </svg>
+)
+
+const blendModes = ['screen', 'exclusion', 'luminosity']
+
+let hue1 = 0
+let hue2 = 150
+let strokeWidth = 150
+let decreasing = true
+
+const draw = (e, context) => {
+  hue1++
+  hue2++
+  const sat = e.clientX / 6
+  if (decreasing === true && strokeWidth > 75) {
+    strokeWidth = strokeWidth - 2
+    if (strokeWidth === 75) {
+      decreasing = false
+    }
+  } else {
+    decreasing = false
+    strokeWidth = strokeWidth + 2
+    if (strokeWidth === 150) {
+      decreasing = true
+    }
+  }
+
+  const gradient =
+    context &&
+    context.createLinearGradient(
+      e.clientX - 35,
+      e.clientY - 35,
+      e.clientX + 35,
+      e.clientY + 35,
+    )
+  gradient.addColorStop(0, `hsl(${hue1}, ${sat}%, 60%)`)
+  gradient.addColorStop(1, `hsl(${hue2}, ${sat}%, 60%)`)
+  context.fillStyle = gradient
+  context.beginPath()
+  context.arc(e.pageX, e.pageY, strokeWidth, 0, 2 * Math.PI)
+  context.fill()
+}
+
 const Homepage = props => {
   const projectsThumbnails = projects.map((project, i) => (
     <Project project={project} key={i} />
@@ -34,20 +92,11 @@ const Homepage = props => {
     project => project.id === props.projectId,
   )
 
-  const modale =
-    selectedProject !== undefined ? (
-      <section className="modale">
-        <Modale project={selectedProject} />
-      </section>
-    ) : (
-      ''
-    )
-
-  const getRandomInt = (min, max) => {
-    min = Math.ceil(min)
-    max = Math.floor(max)
-    return Math.floor(Math.random() * (max - min + 1)) + min
-  }
+  const modale = selectedProject && (
+    <section className="modale">
+      <Modale project={selectedProject} />
+    </section>
+  )
 
   const canvasRef = useRef(null)
   const presSection = useRef(null)
@@ -62,67 +111,17 @@ const Homepage = props => {
       canvas.style.mixBlendMode = blendModes[getRandomInt(0, 3)]
       ctx.clearRect(0, 0, canvas.width, canvas.height)
     })
-    document.addEventListener('scroll', e => {
-      const getPositions = presSection.current.getBoundingClientRect()
-      const hitTop = getPositions.top
-      canvas.style.display = hitTop === 0 ? 'none' : 'block'
-    })
-    document.addEventListener('wheel', e => {
-      canvas.style.pointerEvents = window.scrollY > 0 ? 'none' : 'auto'
-    })
-  })
 
-  const blendModes = ['screen', 'exclusion', 'luminosity']
-
-  let hue1 = 0
-  let hue2 = 150
-  let strokeWidth = 150
-  let decreasing = true
-
-  const draw = e => {
-    hue1++
-    hue2++
-    const sat = e.clientX / 6
-    if (decreasing === true && strokeWidth > 75) {
-      strokeWidth = strokeWidth - 2
-      if (strokeWidth === 75) {
-        decreasing = false
-      }
-    } else {
-      decreasing = false
-      strokeWidth = strokeWidth + 2
-      if (strokeWidth === 150) {
-        decreasing = true
-      }
-    }
-
-    const gradient =
-      context &&
-      context.createLinearGradient(
-        e.clientX - 35,
-        e.clientY - 35,
-        e.clientX + 35,
-        e.clientY + 35,
-      )
-    gradient.addColorStop(0, `hsl(${hue1}, ${sat}%, 60%)`)
-    gradient.addColorStop(1, `hsl(${hue2}, ${sat}%, 60%)`)
-    context.fillStyle = gradient
-    context.beginPath()
-    context.arc(e.pageX, e.pageY, strokeWidth, 0, 2 * Math.PI)
-    context.fill()
-  }
-
-  const arrowDown = (
-    <svg
-      width={40}
-      viewBox="0 0 130 130"
-      fill="none"
-      stroke="white"
-      strokeWidth={5}
-    >
-      <path d="M114.65 73.1L67 120.75 19.35 73.1M67 5.75v114.34" />
-    </svg>
-  )
+    const types = ['scroll', 'wheel']
+    types.map(type =>
+      document.addEventListener(type, e => {
+        const getPositions = presSection.current.getBoundingClientRect()
+        const hitTop = getPositions.top
+        canvas.style.display = hitTop === 0 ? 'none' : 'block'
+        canvas.style.pointerEvents = window.scrollY > 0 ? 'none' : 'auto'
+      }),
+    )
+  }, [context])
 
   return (
     <React.Fragment>
@@ -133,7 +132,7 @@ const Homepage = props => {
         width={window.innerWidth}
         height={window.innerHeight}
         onMouseMove={e => {
-          context && draw(e)
+          context && draw(e, context)
           const scroll = document.getElementById('scroll')
           scroll.style.display = 'flex'
           wrapper.current.style.display = 'block'
