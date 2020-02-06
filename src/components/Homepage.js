@@ -100,8 +100,8 @@ const Homepage = props => {
 
   const canvasRef = useRef(null)
   const presSection = useRef(null)
-  const wrapper = useRef(null)
   const [context, setContext] = useState(null)
+  const [locked, setLocked] = useState(true)
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -115,13 +115,16 @@ const Homepage = props => {
     const types = ['scroll', 'wheel']
     types.map(type =>
       document.addEventListener(type, e => {
-        const getPositions = presSection.current.getBoundingClientRect()
+        const getPositions =
+          presSection &&
+          presSection.current &&
+          presSection.current.getBoundingClientRect()
         const hitTop = getPositions.top
-        canvas.style.display = hitTop === 0 ? 'none' : 'block'
+        canvas.style.display = !locked && hitTop === 0 ? 'none' : 'block'
         canvas.style.pointerEvents = window.scrollY > 0 ? 'none' : 'auto'
       }),
     )
-  }, [context])
+  }, [context, presSection, locked])
 
   return (
     <React.Fragment>
@@ -133,13 +136,11 @@ const Homepage = props => {
         height={window.innerHeight}
         onMouseMove={e => {
           context && draw(e, context)
-          const scroll = document.getElementById('scroll')
-          scroll.style.display = 'flex'
-          wrapper.current.style.display = 'block'
+          setLocked(false)
         }}
       />
 
-      <div className="homepage">
+      <div id="homepage">
         {modale}
         <section className="fixedIntro blended-text">
           <h1>
@@ -148,21 +149,21 @@ const Homepage = props => {
             Graphic designer
             <br />& Creative developer
           </h1>
-          <div id="scroll">
-            <span style={{ marginRight: '15px' }}>Scroll down</span>
+          <div id="scroll" style={{ display: locked ? 'none' : 'flex' }}>
+            {arrowDown}
+            {arrowDown}
+            {arrowDown}
             {arrowDown}
             {arrowDown}
             {arrowDown}
           </div>
         </section>
-
         <br />
-
         <section className="emojiContainer">
           <div className="emoji rotating">&#9757;</div>
         </section>
 
-        <div ref={wrapper} style={{ display: 'none' }}>
+        <div style={{ display: locked ? 'none' : 'block' }}>
           <section className="newsLabel">
             <a
               href="https://mariemalarme.github.io/rotator/"
