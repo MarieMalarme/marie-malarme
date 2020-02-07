@@ -39,10 +39,14 @@ let hue2 = 150
 let strokeWidth = 150
 let decreasing = true
 
-const draw = (e, context) => {
+const draw = ({ e, context, mobile }) => {
+  const x = (mobile && e.touches[0].clientX) || e.clientX
+  const y = (mobile && e.touches[0].clientY) || e.clientY
+  const pageX = (mobile && e.touches[0].pageX) || e.pageX
+  const pageY = (mobile && e.touches[0].pageY) || e.pageY
   hue1++
   hue2++
-  const sat = e.clientX / 6
+  const sat = x / 6
   if (decreasing === true && strokeWidth > 75) {
     strokeWidth = strokeWidth - 2
     if (strokeWidth === 75) {
@@ -57,18 +61,12 @@ const draw = (e, context) => {
   }
 
   const gradient =
-    context &&
-    context.createLinearGradient(
-      e.clientX - 35,
-      e.clientY - 35,
-      e.clientX + 35,
-      e.clientY + 35,
-    )
+    context && context.createLinearGradient(x - 35, y - 35, x + 35, y + 35)
   gradient.addColorStop(0, `hsl(${hue1}, ${sat}%, 60%)`)
   gradient.addColorStop(1, `hsl(${hue2}, ${sat}%, 60%)`)
   context.fillStyle = gradient
   context.beginPath()
-  context.arc(e.pageX, e.pageY, strokeWidth, 0, 2 * Math.PI)
+  context.arc(pageX, pageY, strokeWidth, 0, 2 * Math.PI)
   context.fill()
 }
 
@@ -119,18 +117,48 @@ const Homepage = props => {
 
   return (
     <Fragment>
-      <div className="mobilePage">Please take a look on a wider screen !</div>
-
       <canvas
         ref={canvasRef}
         width={window.innerWidth}
         height={window.innerHeight}
         onMouseMove={e => {
-          context && draw(e, context)
+          context && draw({ e, context })
           setLocked(false)
           setEmptyCanvas(false)
         }}
+        onTouchMove={e => {
+          context && draw({ e, context, mobile: true })
+          setEmptyCanvas(false)
+        }}
+        onTouchStart={e => {
+          context && draw({ e, context, mobile: true })
+          setEmptyCanvas(false)
+        }}
       />
+
+      <div className="mobilePage">
+        {emptyCanvas && <div className="emoji">👆</div>}
+        <h1>
+          Marie Malarme
+          <br />
+          <span>
+            Graphic designer
+            <br />& Creative developer
+          </span>
+        </h1>
+        <div>
+          <p>
+            Currently in Lisbon
+            <br />
+            malarmemarie@gmail.com
+            <br />
+            +33 6 08 76 72 32
+          </p>
+          <p className="advice">
+            To see my portfolio & experience, please switch to a wider device !
+          </p>
+        </div>
+      </div>
 
       <div id="homepage">
         {modale}
