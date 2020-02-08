@@ -5,6 +5,8 @@ import Modale from './Modale.js'
 import Mobile from './Mobile.js'
 import Project from './Project.js'
 import projects from './projects.json'
+import activities from './activities.js'
+import Activity from './Activity.js'
 import { Link } from '@reach/router'
 
 const scrollRight = (el, p) => {
@@ -153,7 +155,7 @@ const Homepage = props => {
 
         <section className="emojiContainer">
           {emptyCanvas ? (
-            <div className="emoji rotating">&#9757;</div>
+            <div className="emoji rotating">👆</div>
           ) : (
             <div id="scroll">
               <div className="down">&#9757;&#9757;&#9757;&#9757;</div>
@@ -272,75 +274,11 @@ const Homepage = props => {
               Recently :
             </h2>
           </section>
-          <div className="flex layersContainer">
-            <div className="layer" style={{ zIndex: '6' }}>
-              <div className="date">2019.11.13</div>
-              Opening of the first school using the 01 pedagogic software in{' '}
-              <a
-                href="https://alem.school/en"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Alem
-              </a>{' '}
-              in Kazakhstan.
-            </div>
 
-            <div className="layer" style={{ zIndex: '5' }}>
-              <div className="date">2018.11.15</div>
-              Started to work in Madeira as Graphic/UI/UX Designer and React
-              Developer for a pedagogic software to learn Programming to people.
-            </div>
-            <div className="layer" style={{ zIndex: '4' }}>
-              <div className="date">2018.07.27</div>
-              Release of the{' '}
-              <a
-                href="https://atelier-rusch.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Atelier Rusch
-              </a>{' '}
-              website and back-office, developed with React Javascript, Redux,
-              Node.JS, MySQL, HTML5 & CSS.
-            </div>
-            <div className="layer" style={{ zIndex: '3' }}>
-              <div className="date">2018.02.26 → 2018.07.27</div>5 month of
-              intensive JavaScript & React development course at{' '}
-              <a
-                href="https://wildcodeschool.fr/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Wild Code School Paris
-              </a>
-              .
-            </div>
-            <div className="layer" style={{ zIndex: '2' }}>
-              <div className="date">2017.07.01 → 2017.11.30</div>
-              Graphic & Webdesigner intern at{' '}
-              <a
-                href="https://bleed.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Bleed
-              </a>{' '}
-              in Vienna.
-            </div>
-            <div className="layer" style={{ zIndex: '1' }}>
-              <div className="date">2017.06.25</div>
-              Graduate with Master's Degree in Multimedia & Interactive Design
-              at{' '}
-              <a
-                href="https://multimedia-sorbonne.com/accueil/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                La Sorbonne
-              </a>{' '}
-              in Paris.
-            </div>
+          <div className="flex layersContainer">
+            {activities.map(({ id, date, content }) => (
+              <Activity key={id} date={date} content={content} id={id} />
+            ))}
             <div className="layer curriculum">
               Want to know more ? See my{' '}
               <a
