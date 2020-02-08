@@ -202,7 +202,8 @@ section.blended-text {
 
 .label h6 {
   font-size: 1vw;
-  line-height: 1.5vw;
+  margin-bottom: 20px;
+  line-height: 1.2vw;
 }
 
 @keyframes news {
