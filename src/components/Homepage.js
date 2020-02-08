@@ -166,10 +166,8 @@ const Homepage = props => {
               <div className="label">
                 <h6>
                   <u>Fresh work</u>
-                  <br />
-                  <br />
-                  Take a look at my last experiment !
                 </h6>
+                <h6>Take a look at my last experiment!</h6>
               </div>
             </a>
           </section>
