@@ -2,6 +2,7 @@ import React, { Fragment, useRef, useEffect, useState } from 'react'
 import ArrowBack from 'react-icons/lib/io/android-arrow-back'
 import ArrowNext from 'react-icons/lib/io/android-arrow-forward'
 import Modale from './Modale.js'
+import Mobile from './Mobile.js'
 import Project from './Project.js'
 import projects from './projects.json'
 import { Link } from '@reach/router'
@@ -136,29 +137,7 @@ const Homepage = props => {
         }}
       />
 
-      <div className="mobilePage">
-        {emptyCanvas && <div className="emoji">👆</div>}
-        <h1>
-          Marie Malarme
-          <br />
-          <span>
-            Graphic designer
-            <br />& Creative developer
-          </span>
-        </h1>
-        <div>
-          <p>
-            Currently in Lisbon
-            <br />
-            malarmemarie@gmail.com
-            <br />
-            +33 6 08 76 72 32
-          </p>
-          <p className="advice">
-            To see my portfolio & experience, please switch to a wider device !
-          </p>
-        </div>
-      </div>
+      <Mobile emptyCanvas={emptyCanvas} />
 
       <div id="homepage">
         {modale}
