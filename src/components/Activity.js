@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Activity = ({ id, date, content }) => (
+export const Activity = ({ id, date, content }) => (
   <div className="layer" style={{ zIndex: id }}>
     <div className="date">{date}</div>
     {content.text.split('//').map(
@@ -18,5 +18,3 @@ const Activity = ({ id, date, content }) => (
     )}
   </div>
 )
-
-export default Activity
