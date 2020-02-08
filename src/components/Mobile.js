@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mobile = ({ emptyCanvas }) => (
+export const Mobile = ({ emptyCanvas }) => (
   <div className="mobilePage">
     {emptyCanvas && <div className="emoji">👆</div>}
     <h1>
@@ -25,8 +25,6 @@ const Mobile = ({ emptyCanvas }) => (
     </div>
   </div>
 )
-
-export default Mobile
 
 // const mobilePage = (
 //   <div className="mobilePage">

@@ -1,13 +1,14 @@
 import React, { Fragment, useRef, useEffect, useState } from 'react'
 import ArrowBack from 'react-icons/lib/io/android-arrow-back'
 import ArrowNext from 'react-icons/lib/io/android-arrow-forward'
-import Modale from './Modale.js'
-import Mobile from './Mobile.js'
-import Project from './Project.js'
+import { Modale } from './Modale.js'
+import { Mobile } from './Mobile.js'
+import { Project } from './Project.js'
 import projects from './projects.json'
 import activities from './activities.js'
-import Activity from './Activity.js'
+import { Activity } from './Activity.js'
 import { Link } from '@reach/router'
+import { ArrowDown, Emoji } from './Components.js'
 
 const scrollRight = (el, p) => {
   el.scrollBy(p, 0)
@@ -22,18 +23,6 @@ const getRandomInt = (min, max) => {
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
-
-const ArrowDown = ({}) => (
-  <svg
-    width={40}
-    viewBox="0 0 130 130"
-    fill="none"
-    stroke="white"
-    strokeWidth={5}
-  >
-    <path d="M114.65 73.1L67 120.75 19.35 73.1M67 5.75v114.34" />
-  </svg>
-)
 
 const blendModes = ['screen', 'exclusion', 'luminosity']
 
@@ -155,10 +144,14 @@ const Homepage = props => {
 
         <section className="emojiContainer">
           {emptyCanvas ? (
-            <div className="emoji rotating">👆</div>
+            <div className="emoji rotating">
+              <Emoji>👆</Emoji>
+            </div>
           ) : (
             <div id="scroll">
-              <div className="down">&#9757;&#9757;&#9757;&#9757;</div>
+              <div className="down">
+                <Emoji>&#9757;&#9757;&#9757;&#9757;</Emoji>
+              </div>
             </div>
           )}
         </section>
