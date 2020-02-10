@@ -15,9 +15,9 @@ const toHTML = {
         title="iframe"
         className="iframe"
         src={value}
-        frameborder="0"
+        frameBorder="0"
         allow="autoplay; loop; encrypted-media"
-        tabindex="-1"
+        tabIndex="-1"
       />
     </div>
   ),
@@ -25,16 +25,12 @@ const toHTML = {
   img: ({ value }) =>
     value.split(',').map((url, i) => <img key={i} src={url} alt="" />),
 
-  video: ({ value }) => (
-    <video
-      width="100%"
-      src={value}
-      type="video/mov"
-      loop="true"
-      autoplay="true"
-    />
-  ),
+  video: ({ value }) => <Video url={value} />,
 }
+
+const Video = ({ url }) => (
+  <video width="100%" src={url} type="video/mov" loop={true} autoPlay={true} />
+)
 
 const Element = ({ element }) => toHTML[element.type](element)
 
@@ -53,13 +49,7 @@ export const Modale = ({ project }) => {
 
       {project.modaleIntroImage.includes('.mov') ||
       project.modaleIntroImage.includes('.mp4') ? (
-        <video
-          width="100%"
-          src={project.modaleIntroImage}
-          type="video/mov"
-          loop="true"
-          autoplay="true"
-        />
+        <Video url={project.modaleIntroImage} />
       ) : (
         <div
           className="modaleIntroImage"

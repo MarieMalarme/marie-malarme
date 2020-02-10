@@ -34,7 +34,7 @@ const Homepage = props => {
   )
 
   const canvasRef = useRef(null)
-  const presSection = useRef(null)
+  const presentationRef = useRef(null)
   const [context, setContext] = useState(null)
   const [locked, setLocked] = useState(true)
   const [emptyCanvas, setEmptyCanvas] = useState(true)
@@ -52,16 +52,16 @@ const Homepage = props => {
     const types = ['scroll', 'wheel']
     types.map(type =>
       document.addEventListener(type, e => {
+        if (locked || !presentationRef) return
         const getPositions =
-          presSection &&
-          presSection.current &&
-          presSection.current.getBoundingClientRect()
+          presentationRef.current &&
+          presentationRef.current.getBoundingClientRect()
         const hitTop = getPositions.top
-        canvas.style.display = !locked && hitTop === 0 ? 'none' : 'block'
+        canvas.style.display = hitTop === 0 ? 'none' : 'block'
         canvas.style.pointerEvents = window.scrollY > 0 ? 'none' : 'auto'
       }),
     )
-  }, [context, presSection, locked, emptyCanvas])
+  }, [context, presentationRef, locked, emptyCanvas])
 
   return (
     <Fragment>
@@ -81,16 +81,18 @@ const Homepage = props => {
         <br />
         <EmojiContainer emptyCanvas={emptyCanvas} />
 
-        <div style={{ display: locked ? 'none' : 'block' }}>
-          <Label />
-          <Presentation presSection={presSection} />
-          <Visual />
-          <Current />
-          <Projects />
-          <Skills />
-          <Activities />
-          <Contact />
-        </div>
+        {!locked && (
+          <Fragment>
+            <Label />
+            <Presentation presentationRef={presentationRef} />
+            <Visual />
+            <Current />
+            <Projects />
+            <Skills />
+            <Activities />
+            <Contact />
+          </Fragment>
+        )}
       </div>
     </Fragment>
   )
