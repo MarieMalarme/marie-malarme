@@ -55,8 +55,8 @@ export const Label = () => (
   </section>
 )
 
-export const Presentation = ({ presSection }) => (
-  <section className="presentation" ref={presSection}>
+export const Presentation = ({ presentationRef }) => (
+  <section className="presentation" ref={presentationRef}>
     <h2>
       Hello ! I'm a french <span className="underlined">graphic designer</span>{' '}
       who loves to <span className="underlined">explore & create</span> with
