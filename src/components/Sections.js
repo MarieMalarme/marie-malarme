@@ -149,7 +149,7 @@ export const Skills = () => (
       <br />
       <h2 className="skillsText">
         <span className="skillsArrow">→</span>
-        Front-end & back-end with JavaScript, React, Redux, Node.js, MySQL,
+        Front-end & back-end with JavaScript, React, Node.js, MySQL, GraphQL,
         HTML5 & CSS
       </h2>
     </div>
