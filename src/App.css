@@ -351,14 +351,7 @@ section.blended-text {
 }
 
 .projectPlaceholder {
-  background-image: radial-gradient(
-    circle,
-    #b16fca,
-    #a356d4,
-    #8d3ce1,
-    #6a21ef,
-    #0500ff
-  );
+  background-image: linear-gradient(325deg, blue 0%, #a6ff00 60%);
 }
 
 .project {
