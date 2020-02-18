@@ -85,9 +85,9 @@ export const Current = () => (
     </a>
     <div className="currentActivity">
       <h2>
-        I'm currently working in Lisbon on an exciting{' '}
-        <span className="mono">pedagogic software project</span> to learn
-        Programming to people, but I'm always interested in taking part to{' '}
+        I'm currently working between Paris & Lisbon on an exciting{' '}
+        <span className="mono">pedagogic software</span> to learn Programming to
+        people, but I'm always interested in taking part to{' '}
         <span className="mono">great projects</span> of any kind to explore
         further directions.
       </h2>
