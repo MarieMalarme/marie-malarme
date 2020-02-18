@@ -3,7 +3,7 @@ export const activities = [
     id: 6,
     date: `2019.11.13`,
     content: {
-      text: `Opening of the first school using the 01 pedagogic software in //Alem// in Kazakhstan.`,
+      text: `Opening of the first school using the Zone 01 pedagogic software in //Alem// in Kazakhstan.`,
       links: [`https://alem.school/en`],
     },
   },
@@ -11,7 +11,7 @@ export const activities = [
     id: 5,
     date: `2018.11.15`,
     content: {
-      text: `Started to work in Madeira as Graphic/UI/UX Designer and React Developer for a pedagogic software to learn Programming to people.`,
+      text: `Team workshop session in Madeira as Graphic/UI/UX Designer and React Developer to conceive a pedagogic software to learn Programming to people.`,
       links: [],
     },
   },
