@@ -7,7 +7,10 @@
     "headerDescription": "Pedagogic software to learn programming. Conception, interface design, data architecture and React + GraphQL development of the platform.",
     "modaleIntroImage": "/img/01-introImage.jpg",
     "description": "Zone 01 is a worldwide education project developped and led by Nicolas Sadirac, based on his innovative pedagogy model of peer-learning that he formerly implemented in French schools such as Epita, Epitech and 42.<br/><br/>This ambitious initiative aims to spread digital science through a contemporary method of learning, which revolutionizes the conventional descendant ways of aquiring knowledge ; schools all around the globe but no teachers, only students sharing and bringing their own experience to help each other and build common intelligence.<br/>The heart of the project is the software deployed in the schools, which consists in a platform the student uses during his whole training in 01: a complete program filled with pedagogic contents that will lead him to learn programming concepts, develop projects, review his pairs' code and work in team.<br/><br/>Within our team of 9 developers, I'm in charge of conceiveing and designing the interface, as well as developing a consequent part of the front-end. To achieve this, I've built an entire components library, enabling my colleagues to easily integrate the design system in their work.",
-    "modaleContent": [{ "type": "img", "value": "/img/01-content-1.jpg" }]
+    "modaleContent": [
+      { "type": "img", "value": "/img/01-content-1.jpg" },
+      { "type": "img", "value": "/img/01-content-2.jpg" }
+    ]
   },
   {
     "id": "9",
